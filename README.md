@@ -60,7 +60,7 @@ void func(Cat *xyz) { xyz->eat(); }
 func(cat);    // outputs: "I'm eating a rat."
 ```
 
-which outputs what we expect, but one would have to create a func() for each Animal-derived class. This does not reuse code. The correct solution is to add the specifier **keyword** to Animal::eat() so that we instruct the compiler that we want late binding of eat().
+which outputs what we expect, but one would have to create a func() for each Animal-derived class. This does not reuse code. The correct solution is to add the specifier **virtual** to Animal::eat() so that we instruct the compiler that we want late binding of eat().
 
 ```
 class Animal
