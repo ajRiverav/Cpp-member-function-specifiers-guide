@@ -73,7 +73,7 @@ func(animal); // outputs: "I'm eating generic food."
 func(cat);    // outputs: "I'm eating a rat."
 ```
 
-Here, Cat is downcasted to an Animal but because we have added the virtual specifier to the member function Animal::eat(), late binding is used. 
+Here, cat is downcasted to an animal but because we have added the virtual specifier to the member function Animal::eat(), late binding is used. 
 
 When dynamic binding is used, which member function to call occurs during run-time depending on who calls func()  (hence dynamically). In this case it was a Cat which caused func() to call Cat::eat()). 
 
