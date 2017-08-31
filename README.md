@@ -25,7 +25,7 @@ final (since C++17)
 Keyword **virtual** is used to specify dynamic (or late) binding, as opposed to static (or early) binding.
 One clear issue with dynamic vs. static binding can be shown in the example provided at https://stackoverflow.com/a/2392656/5597960. 
 
-```
+```cpp
 class Animal
 {
 public:
@@ -42,19 +42,19 @@ Animal *animal = new Animal;
 Cat *cat = new Cat;
 ```
 Calling the eat member function, one gets:
-```
+```cpp
 animal->eat(); // outputs: "I'm eating generic food."
 cat->eat();    // outputs: "I'm eating a rat."
 ```
 
 So far, so good. Let's define a function that forces a downcast of a pointer:
-```
+```cpp
 void func(Animal *xyz) { xyz->eat(); }
 func(animal); // outputs: "I'm eating generic food."
 func(cat);    // outputs: "I'm eating generic food."
 ```
 We don't want cats to eat generic food. To solve this, one can define
-```
+```cpp
 void func(Cat *xyz) { xyz->eat(); }
 
 func(cat);    // outputs: "I'm eating a rat."
@@ -62,7 +62,7 @@ func(cat);    // outputs: "I'm eating a rat."
 
 which outputs what we expect, but one would have to create a func() for each Animal-derived class. This does not reuse code. The correct solution is to add the specifier **virtual** to Animal::eat() so that we instruct the compiler that we want late binding of eat().
 
-```
+```cpp
 class Animal
 {
 public:
