@@ -85,3 +85,4 @@ When static binding occurs, the member function to call is decided during compil
 * = default (http://en.cppreference.com/w/cpp/language/copy_constructor)
 * static
 * inline https://msdn.microsoft.com/en-us/library/bw1hbe6y(v=vs.100).aspx
+* volatile
