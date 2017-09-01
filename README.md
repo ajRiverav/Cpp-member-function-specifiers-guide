@@ -11,16 +11,6 @@ to add the specifier **override**.
 Some of these specifiers can be used in contexts other than member functions and will not be covered. For example, the
 keyword const can be used in the context of constant values as well as constant member functions. 
 
-
-### LIST
-virtual
-constexpr (since C++11)
-const
-virtual = 0
-override (since C++11)
-final (since C++17)
-
-
 ## VIRTUAL
 Keyword **virtual** is used to specify dynamic (or late) binding, as opposed to static (or early) binding.
 One clear issue with dynamic vs. static binding can be shown in the example provided at https://stackoverflow.com/a/2392656/5597960. 
@@ -78,3 +68,13 @@ Here, cat is downcasted to an animal but because we have added the virtual speci
 When dynamic binding is used, which member function to call occurs during run-time depending on who calls func()  (hence dynamically). In this case it was a Cat which caused func() to call Cat::eat()). 
 
 When static binding occurs, the member function to call is decided during compile time (hence the word static=does not change). In the original code it was Aminal::eat(). 
+
+### TODO:
+#### LIST
+virtual destructor
+constexpr (since C++11)
+const
+virtual = 0
+override (since C++11)
+final (since C++17)
+= default
