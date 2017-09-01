@@ -19,14 +19,17 @@ One clear issue with dynamic vs. static binding can be shown in the example prov
 class Animal
 {
 public:
-	void eat() { std::cout << "I'm eating generic food."; }
+	void eat();
 }
 
 class Cat : public Animal
 {
 public:
-	void eat() { std::cout << "I'm eating a rat."; }
+	void eat();
 }
+
+void Animal::eat() { std::cout << "I'm eating generic food."; }
+void Cat::eat() { std::cout << "I'm eating a rat."; }
 
 Animal *animal = new Animal;
 Cat *cat = new Cat;
@@ -56,8 +59,10 @@ which outputs what we expect, but one would have to create a func() for each Ani
 class Animal
 {
 public:
-virtual void eat() { std::cout << "I'm eating generic food."; }
+	virtual void eat(); 
 }
+
+void Animal::eat() { std::cout << "I'm eating generic food."; } //The definition does not change. 
 
 func(animal); // outputs: "I'm eating generic food."
 func(cat);    // outputs: "I'm eating a rat."
