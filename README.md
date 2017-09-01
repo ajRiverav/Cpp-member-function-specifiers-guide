@@ -73,16 +73,3 @@ Here, cat is downcasted to an animal but because we have added the virtual speci
 When dynamic binding is used, which member function to call occurs during run-time depending on who calls func()  (hence dynamically). In this case it was a Cat which caused func() to call Cat::eat()). 
 
 When static binding occurs, the member function to call is decided during compile time (hence the word static=does not change). In the original code it was Aminal::eat(). 
-
-### TODO:
-#### LIST
-* virtual destructor (http://www.learncpp.com/cpp-tutorial/123-virtual-destructors-virtual-assignment-and-overriding-virtualization/)
-* constexpr (since C++11)
-* const
-* virtual = 0
-* override (since C++11)
-* final (since C++17)
-* = default (http://en.cppreference.com/w/cpp/language/copy_constructor)
-* static
-* inline https://msdn.microsoft.com/en-us/library/bw1hbe6y(v=vs.100).aspx
-* volatile
