@@ -71,10 +71,12 @@ When static binding occurs, the member function to call is decided during compil
 
 ### TODO:
 #### LIST
-* virtual destructor
+* virtual destructor (http://www.learncpp.com/cpp-tutorial/123-virtual-destructors-virtual-assignment-and-overriding-virtualization/)
 * constexpr (since C++11)
 * const
 * virtual = 0
 * override (since C++11)
 * final (since C++17)
-* = default
+* = default (http://en.cppreference.com/w/cpp/language/copy_constructor)
+* static
+* inline https://msdn.microsoft.com/en-us/library/bw1hbe6y(v=vs.100).aspx
