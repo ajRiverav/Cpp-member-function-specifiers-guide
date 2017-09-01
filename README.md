@@ -71,10 +71,10 @@ When static binding occurs, the member function to call is decided during compil
 
 ### TODO:
 #### LIST
-virtual destructor
-constexpr (since C++11)
-const
-virtual = 0
-override (since C++11)
-final (since C++17)
-= default
+* virtual destructor
+* constexpr (since C++11)
+* const
+* virtual = 0
+* override (since C++11)
+* final (since C++17)
+* = default
