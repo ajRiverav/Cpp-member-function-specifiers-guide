@@ -53,7 +53,7 @@ void func(Cat *xyz) { xyz->eat(); }
 func(cat);    // outputs: "I'm eating a rat."
 ```
 
-which outputs what we expect, but one would have to create a func() for each Animal-derived class. This does not reuse code. The correct solution is to add the specifier **virtual** to Animal::eat() so that we instruct the compiler that we want late binding of eat().
+which outputs what we expect, but one would have to create a func() for each Animal-derived class. *This does not reuse code.* The correct solution is to add the specifier **virtual** to Animal::eat() so that we instruct the compiler that we want late binding of eat().
 
 ```cpp
 class Animal
@@ -70,6 +70,6 @@ func(cat);    // outputs: "I'm eating a rat."
 
 Here, cat is downcasted to an animal but because we have added the virtual specifier to the member function Animal::eat(), late binding is used. 
 
-When dynamic binding is used, which member function to call occurs during run-time depending on who calls func()  (hence dynamically). In this case it was a Cat which caused func() to call Cat::eat()). 
+When dynamic binding is used, the decision of which member function to call occurs during run-time depending on the object passed in to func() (hence dynamically). In this case it was a Cat which caused func() to call Cat::eat()). 
 
-When static binding occurs, the member function to call is decided during compile time (hence the word static=does not change). In the original code it was Aminal::eat(). 
+When static binding occurs, the member function to call is decided during compile time (hence the word static).
