@@ -73,3 +73,27 @@ Here, cat is downcasted to an animal but because we have added the virtual speci
 When dynamic binding is used, the decision of which member function to call occurs during run-time depending on the object passed in to func() (hence dynamically). In this case it was a Cat which caused func() to call Cat::eat()). 
 
 When static binding occurs, the member function to call is decided during compile time (hence the word static).
+
+## Overriding and Overloading (two different things)
+
+A member function is overloaded when a second member function inside the same class has a different signature. A functions signature includes its name, and the number and type of its parameters.
+
+```
+class MyClass {
+public:
+	void doSomething( int a ){ //... }
+	void sum( double a ) { //.... }
+{
+```
+
+In the code above, sum has the same name and number of parameters, but the types are different. Therefore, My::sum() is overloaded when we added ::sum(double,double). You can see why it may be useful: if the parameters are integers, we  What happens if:
+
+```
+class Arithmetic {
+public:
+	int sum( int a, int b ){ return a+b; }
+	double sum( double a, double b) { return a+b; }
+{
+```
+
+A member function is overloaded when a second member function inside the same class has a different signature. 
