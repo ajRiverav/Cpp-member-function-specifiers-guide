@@ -9,10 +9,7 @@ one is encouraged to add the specifier **const**.
 
 Some of these specifiers can be used in contexts other than member functions and will not be covered. For example, the keyword const can be used in the context of constant values as well as constant member functions. 
 
-
-down vote
-You can give this a try.
-
+<a name="toc"></a>
 # Table of Contents
 1. [Virtual](#virtual)
 2. [Overriding and Overloading](#overriding_and_overloading)
@@ -78,6 +75,8 @@ When dynamic binding is used, the decision of which member function to call occu
 
 When static binding occurs, the member function to call is decided during compile time (hence the word static).
 
+[Go back to Table of Contents](#toc)
+
 <a name="overriding_and_overloading"></a>
 ## Overriding and Overloading  
 
@@ -103,4 +102,6 @@ class Myclass{
 };
 ```
 #### Overriding
+
+[Go back to Table of Contents](#toc)
 
