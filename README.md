@@ -76,24 +76,26 @@ When static binding occurs, the member function to call is decided during compil
 
 ## Overriding and Overloading (two different things)
 
+#### Overloading
 A member function is overloaded when a second member function inside the same class has a different signature. A functions signature includes its name, and the number and type of its parameters.
 
 ```
-class MyClass {
-public:
-	void doSomething( int a ){ //... }
-	void sum( double a ) { //.... }
-{
+class Myclass{
+    public:
+        int returnSomething(int a){ //...}
+        int returnSomething(double a){ //... }
+};
 ```
 
-In the code above, sum has the same name and number of parameters, but the types are different. Therefore, My::sum() is overloaded when we added ::sum(double,double). You can see why it may be useful: if the parameters are integers, we  What happens if:
+In the code above, returnSomething has the same name and number of parameters, but the types are different. Therefore, MyClass::returnSomething is overloaded. 
 
+The example will not compile because, even though you may think you are overloading returnSomething by having a different return type, the signature -which is what matters when overloading- is the same. 
 ```
-class Arithmetic {
-public:
-	int sum( int a, int b ){ return a+b; }
-	double sum( double a, double b) { return a+b; }
-{
-```
+class Myclass{
+    public:
+        int returnSomething(int a){ //... }
+        double returnSomething(int a){ //... }
+};
 
-A member function is overloaded when a second member function inside the same class has a different signature. 
+#### Overriding
+
