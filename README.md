@@ -23,14 +23,12 @@ Keyword **virtual** is used to specify dynamic (or late) binding, as opposed to 
 One clear issue with dynamic vs. static binding can be shown in the example provided at https://stackoverflow.com/a/2392656/5597960. 
 
 ```cpp
-class Animal
-{
+class Animal {
 public:
 	void eat();
 }
 
-class Cat : public Animal
-{
+class Cat : public Animal {
 public:
 	void eat();
 }
@@ -63,8 +61,7 @@ func(cat);    // outputs: "I'm eating a rat."
 which outputs what we expect, but one would have to create a func() for each Animal-derived class. *This does not reuse code.* The correct solution is to add the specifier **virtual** to Animal::eat() so that we instruct the compiler that we want late binding of eat().
 
 ```cpp
-class Animal
-{
+class Animal {
 public:
 	virtual void eat(); 
 }
@@ -87,8 +84,8 @@ When static binding occurs, the member function to call is decided during compil
 #### Overloading
 A member function is overloaded when a second member function inside the same class has a different signature. A functions signature includes its name, and the number and type of its parameters.
 
-```
-class Myclass{
+```cpp
+class Myclass {
     public:
         int returnSomething(int a){ //...}
         int returnSomething(double a){ //... }
@@ -98,7 +95,7 @@ class Myclass{
 In the code above, returnSomething has the same name and number of parameters, but the types are different. Therefore, MyClass::returnSomething is overloaded. 
 
 The example below will not compile because, even though you may think you are overloading returnSomething by having a different return type, the signature -which is what matters when overloading- is the same. 
-```
+```cpp
 class Myclass{
     public:
         int returnSomething(int a){ //... }
