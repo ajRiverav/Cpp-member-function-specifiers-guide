@@ -4,12 +4,10 @@ It may come natural to a seasoned C++ programmers which specifiers are applicabl
 who are not as experienced, it may serve as a checklist for what could be used. Specifiers can express developer intent, 
 restrictions, help the compiler optimize the compiled code, among other things. 
 
-For example, if the developer knows that the member function will not be modifying the object for which it is called, 
-it is encouraged to add the specifier **const**. Similarly, if a member function is being overloaded, it is wise
-to add the specifier **override**.
+For example, if one knows that a member function will not be modifying the object for which it is called, 
+one is encouraged to add the specifier **const**. 
 
-Some of these specifiers can be used in contexts other than member functions and will not be covered. For example, the
-keyword const can be used in the context of constant values as well as constant member functions. 
+Some of these specifiers can be used in contexts other than member functions and will not be covered. For example, the keyword const can be used in the context of constant values as well as constant member functions. 
 
 ## VIRTUAL
 Keyword **virtual** is used to specify dynamic (or late) binding, as opposed to static (or early) binding.
