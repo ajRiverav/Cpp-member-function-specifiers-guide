@@ -89,7 +89,7 @@ class Myclass{
 
 In the code above, returnSomething has the same name and number of parameters, but the types are different. Therefore, MyClass::returnSomething is overloaded. 
 
-The example will not compile because, even though you may think you are overloading returnSomething by having a different return type, the signature -which is what matters when overloading- is the same. 
+The example below will not compile because, even though you may think you are overloading returnSomething by having a different return type, the signature -which is what matters when overloading- is the same. 
 ```
 class Myclass{
     public:
