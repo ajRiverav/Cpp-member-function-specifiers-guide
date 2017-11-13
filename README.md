@@ -9,7 +9,16 @@ one is encouraged to add the specifier **const**.
 
 Some of these specifiers can be used in contexts other than member functions and will not be covered. For example, the keyword const can be used in the context of constant values as well as constant member functions. 
 
-## VIRTUAL
+
+down vote
+You can give this a try.
+
+# Table of Contents
+1. [Virtual](#virtual)
+2. [Overriding and Overloading](#overriding_and_overloading)
+
+
+## VIRTUAL <a name="virtual"></a>
 Keyword **virtual** is used to specify dynamic (or late) binding, as opposed to static (or early) binding.
 One clear issue with dynamic vs. static binding can be shown in the example provided at https://stackoverflow.com/a/2392656/5597960. 
 
@@ -72,7 +81,7 @@ When dynamic binding is used, the decision of which member function to call occu
 
 When static binding occurs, the member function to call is decided during compile time (hence the word static).
 
-## Overriding and Overloading (two different things)
+## Overriding and Overloading  <a name="overriding_and_overloading"></a>
 
 #### Overloading
 A member function is overloaded when a second member function inside the same class has a different signature. A functions signature includes its name, and the number and type of its parameters.
@@ -94,6 +103,6 @@ class Myclass{
         int returnSomething(int a){ //... }
         double returnSomething(int a){ //... }
 };
-
+```
 #### Overriding
 
