@@ -17,8 +17,8 @@ You can give this a try.
 1. [Virtual](#virtual)
 2. [Overriding and Overloading](#overriding_and_overloading)
 
-
-## VIRTUAL <a name="virtual"></a>
+<a name="virtual"></a>
+## VIRTUAL 
 Keyword **virtual** is used to specify dynamic (or late) binding, as opposed to static (or early) binding.
 One clear issue with dynamic vs. static binding can be shown in the example provided at https://stackoverflow.com/a/2392656/5597960. 
 
@@ -81,7 +81,8 @@ When dynamic binding is used, the decision of which member function to call occu
 
 When static binding occurs, the member function to call is decided during compile time (hence the word static).
 
-## Overriding and Overloading  <a name="overriding_and_overloading"></a>
+<a name="overriding_and_overloading"></a>
+## Overriding and Overloading  
 
 #### Overloading
 A member function is overloaded when a second member function inside the same class has a different signature. A functions signature includes its name, and the number and type of its parameters.
