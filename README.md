@@ -15,7 +15,7 @@ Some of these specifiers can be used in contexts other than member functions and
 2. [Overriding, Overloading, and Function Hiding](#overriding_and_overloading)
 
 <a name="virtual"></a>
-## VIRTUAL 
+## VIRTUAL ([Go back to Table of Contents](#toc))
 Keyword **virtual** is used to specify dynamic (or late) binding, as opposed to static (or early) binding.
 One clear issue with dynamic vs. static binding can be shown in the example provided at https://stackoverflow.com/a/2392656/5597960. 
 
@@ -78,7 +78,7 @@ When static binding occurs, the member function to call is decided during compil
 [Go back to Table of Contents](#toc)
 
 <a name="overriding_and_overloading"></a>
-## Overriding, Overloading, and function hiding
+## Overriding, Overloading, and function hiding ([Go back to Table of Contents](#toc))
 
 #### Overloading
 A member function is overloaded when another member function of the same class has a different signature. A function signature is comprised of its its name, and the number and type of its parameters.
