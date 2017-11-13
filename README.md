@@ -1,4 +1,4 @@
-# A list of keywords for C++ member functions
+# A list of specifiers for C++ member functions
 
 It may come natural to a seasoned C++ programmers which specifiers are applicable. For those
 who are not as experienced, it may serve as a checklist for what could be used. Specifiers can express developer intent, 
@@ -78,10 +78,10 @@ When static binding occurs, the member function to call is decided during compil
 [Go back to Table of Contents](#toc)
 
 <a name="overriding_and_overloading"></a>
-## Overriding and Overloading  
+## Overriding, Overloading, and function hiding
 
 #### Overloading
-A member function is overloaded when a second member function inside the same class has a different signature. A functions signature includes its name, and the number and type of its parameters.
+A member function is overloaded when another member function of the same class has a different signature. A function signature is comprised of its its name, and the number and type of its parameters.
 
 ```cpp
 class Myclass {
@@ -102,6 +102,23 @@ class Myclass{
 };
 ```
 #### Overriding
+
+Overriding occurs when one redefines an existing member function. This implies a change in the body of such function and NOT its signature. 
+
+```cpp
+class Animal {
+public:
+	virtual void eatThisFood( string s ){ //... }
+}
+
+class Human : public Animal {
+public:
+	void eatThisFood( string s ) override {// ... }
+}
+```
+
+Here, Human::eatThisFood overrides Animal::eatThisFood. Note the signature is the same. It is advisable to add the specifier **override** because it helps with code maintenance and bugs. For example, if a developer changes Animal::eatThisFood's signature, as long as the specifier override is there, the compile will let you know Human::eatThisFood is not overriding anything. 
+
 
 [Go back to Table of Contents](#toc)
 
