@@ -165,6 +165,6 @@ public:
 <a name="const"></a>
 ## Const
 
-Whenever a member function does not change the object on which it is called, it is good practice to add the specifier **const** to it. This helps with code maintance and prevents such a member function from mistakenly changing the state of an object.
+Whenever a member function does not change the object on which it is called, it is good practice to add the specifier **const** to it. This helps with code maintance. If the member function attempts to modify the object, the compiler will give an error. 
 
 [Go back to Table of Contents](#toc)
