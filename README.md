@@ -147,7 +147,7 @@ int main() {
 }
 ```
 
-In the code above, d.fun(5) causes a compiler error. The compiler cannot find Derived::memFun(int). A developer may mistakenly think that Base::memFun(int) will be called in d.memFun(5), but it has been hidden by the existance of Derived::memFun(). That is, one may think that memFun is an overloaded member function, but it is not because overloading does not exist across classes. The reasons why Base::memFun is hidden is beyond this article and can be found [here](https://stackoverflow.com/a/1629074/5597960). 
+In the code above, d.fun(5) causes a compiler error. The compiler cannot find Derived::memFun(int). A developer may mistakenly think that Base::memFun(int) will be called in d.memFun(5), but it has been hidden by the existence of Derived::memFun(). That is, one may think that memFun is an overloaded member function, but it is not because overloading does not exist across classes. The reasons why Base::memFun is hidden is beyond this article and can be found [here](https://stackoverflow.com/a/1629074/5597960). 
 
 What is the solution if we really wanted to use Base::memFun? It would be to add "using Base::memFun; to the derived class":
 
