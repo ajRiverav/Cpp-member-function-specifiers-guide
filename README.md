@@ -117,7 +117,7 @@ public:
 }
 ```
 
-Here, Human::eatThisFood overrides Animal::eatThisFood. Note the signature is the same but how an Animal and a Human may eat food in different ways. It is advisable to add the specifier **override** because it helps with code maintenance and bugs. For example, if a developer changes Animal::eatThisFood's signature, as long as the specifier override is there, the compile will let you know Human::eatThisFood is not overriding anything. 
+Here, Human::eatThisFood overrides Animal::eatThisFood. Note the signature is the same. It is advisable to add the specifier **override** because it helps with code maintenance and bugs. For example, if a developer changes Animal::eatThisFood's signature, as long as the specifier **override** is there, the compile will let you know Human::eatThisFood is not overriding anything. 
 
 
 [Go back to Table of Contents](#toc)
