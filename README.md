@@ -159,4 +159,8 @@ public:
 };
 ```
 
+## Const ([Go back to Table of Contents](#toc))
+
+Whenever a member function does not change the object on which it is called, it is good practice to add the specifier **const** to it. This helps with code maintance. 
+
 [Go back to Table of Contents](#toc)
