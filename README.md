@@ -12,7 +12,7 @@ Some of these specifiers can be used in contexts other than member functions and
 <a name="toc"></a>
 # Table of Contents
 1. [Virtual](#virtual)
-2. [Overriding, Overloading, and Function Hiding](#overriding_and_overloading)
+2. [Overriding, Overloading, Function Hiding, and Using](#overriding_and_overloading)
 
 <a name="virtual"></a>
 ## VIRTUAL ([Go back to Table of Contents](#toc))
@@ -78,7 +78,14 @@ When static binding occurs, the member function to call is decided during compil
 [Go back to Table of Contents](#toc)
 
 <a name="overriding_and_overloading"></a>
-## Overriding, Overloading, and function hiding ([Go back to Table of Contents](#toc))
+## Overriding, Overloading, Function Hiding, and Using ([Go back to Table of Contents](#toc))
+
+Summary:
+* Member function overloading occurs when multiple member functions exist in the same class with the same name but with different signatures. 
+
+* Member function overriding occurs when both a base and derive class have a member function with the same signature. 
+
+* Name hiding occurs when a member function name of a derived class coincides with the name of a member function of the base class.
 
 #### Overloading
 A member function is overloaded when another member function of the same class has a different signature. A function signature is comprised of its its name, and the number and type of its parameters.
@@ -91,7 +98,7 @@ class Myclass {
 };
 ```
 
-In the code above, returnSomething has the same name and number of parameters, but the types are different. Therefore, MyClass::returnSomething is overloaded. 
+In the code above, returnSomething has the same name and number of parameters, but the types are different. Therefore, MyClass::returnSomething is overloaded.
 
 The example below will not compile because, even though you may think you are overloading returnSomething by having a different return type, the signature -which is what matters when overloading- is the same. 
 ```cpp
@@ -117,8 +124,39 @@ public:
 }
 ```
 
-Here, Human::eatThisFood overrides Animal::eatThisFood. Note the signature is the same. It is advisable to add the specifier **override** because it helps with code maintenance and bugs. For example, if a developer changes Animal::eatThisFood's signature, as long as the specifier **override** is there, the compile will let you know Human::eatThisFood is not overriding anything. 
+Here, Human::eatThisFood overrides Animal::eatThisFood. Note the signature is the same. It is advisable to add the specifier **override** because it helps with code maintenance and bugs. For example, if a developer changes Animal::eatThisFood's signature, as long as the specifier **override** is there, the compile will let you know Human::eatThisFood is not overriding anything. Why does Animal::eatThisFood is virtual? It does not have to, but because we added the specifier override to Human::eatThisFood, 
 
+#### Function Hiding
+
+```cpp
+class Base {
+public:
+	virtual void memFun() { cout<<"Base::memFun() called";}
+	virtual void memFun(int i) { cout<<"Base::memFun(int i) called";}
+};
+
+class Derived: public Base {
+public:
+	void memFun() { cout<<"Derived::memFun() called";}
+};
+
+int main() {
+	Derived d;
+	d.memFun(5); // Compiler Error error: no matching function for call to 'Derived::memFun(int)'
+	return 0;
+}
+```
+
+In the code above, d.fun(5) causes a compiler error. The compiler cannot find Derived::memFun(int). A developer may mistakenly think that Base::memFun(int) will be called in d.memFun(5), but it has been hidden by the existance of Derived::memFun(). That is, one may think that memFun is an overloaded member function, but it is not because overloading does not exist across classes. The reasons why Base::memFun is hidden is beyond this article and can be found [here](https://stackoverflow.com/a/1629074/5597960). 
+
+What is the solution if we really wanted to use Base::memFun? It would be to add "using Base::memFun; to the derived class":
+
+```cpp
+class Derived: public Base {
+public:
+	using Base::memFun;
+	void memFun() { cout<<"Derived::memFun() called";}
+};
+```
 
 [Go back to Table of Contents](#toc)
-
