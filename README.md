@@ -13,9 +13,10 @@ Some of these specifiers can be used in contexts other than member functions and
 # Table of Contents
 1. [Virtual](#virtual)
 2. [Overriding, Overloading, Function Hiding, and Using](#overriding_and_overloading)
+3. [Const](#const)
 
 <a name="virtual"></a>
-## VIRTUAL ([Go back to Table of Contents](#toc))
+## VIRTUAL
 Keyword **virtual** is used to specify dynamic (or late) binding, as opposed to static (or early) binding.
 One clear issue with dynamic vs. static binding can be shown in the example provided at https://stackoverflow.com/a/2392656/5597960. 
 
@@ -108,6 +109,7 @@ class Myclass{
         double returnSomething(int a){ //... }
 };
 ```
+([Go back to Table of Contents](#toc))
 #### Overriding
 
 Overriding occurs when one redefines an existing member function. This implies a change in the body of such function and NOT its signature. 
@@ -126,6 +128,7 @@ public:
 
 Here, Human::eatThisFood overrides Animal::eatThisFood. Note the signature is the same. It is advisable to add the specifier **override** because it helps with code maintenance and bugs. For example, if a developer changes Animal::eatThisFood's signature, as long as the specifier **override** is there, the compile will let you know Human::eatThisFood is not overriding anything. Why does Animal::eatThisFood is virtual? It does not have to, but because we added the specifier override to Human::eatThisFood, 
 
+([Go back to Table of Contents](#toc))
 #### Function Hiding
 
 ```cpp
@@ -158,9 +161,9 @@ public:
 	void memFun() { cout<<"Derived::memFun() called";}
 };
 ```
+<a name="const"></a>
+## Const
 
-## Const ([Go back to Table of Contents](#toc))
-
-Whenever a member function does not change the object on which it is called, it is good practice to add the specifier **const** to it. This helps with code maintance. 
+Whenever a member function does not change the object on which it is called, it is good practice to add the specifier **const** to it. This helps with code maintance and prevents such a member function from mistakenly changing the state of an object.
 
 [Go back to Table of Contents](#toc)
