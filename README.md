@@ -167,4 +167,6 @@ public:
 
 Whenever a member function does not change the object for which it is called, it is good practice to add the specifier **const** to it. This helps with code maintance. If the member function attempts to modify the object, the compiler will give an error. 
 
+Another reason to use a const member function is to be able to use it on a const object. 
+
 [Go back to Table of Contents](#toc)
