@@ -86,7 +86,7 @@ Summary:
 
 * Member function overriding occurs when both a base and derive class have a member function with the same signature. 
 
-* Name hiding occurs when a member function name of a derived class coincides with the name of a member function of the base class.
+* Name hiding occurs when a member function name in a derived class coincides with the name of a member function of the base class.
 
 #### Overloading
 A member function is overloaded when another member function of the same class has a different signature. A function signature is comprised of its its name, and the number and type of its parameters.
